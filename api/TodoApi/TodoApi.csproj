@@ -38,6 +38,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -91,7 +99,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\TodoViewModel.cs" />
+    <Compile Include="Infra\Context\TodoContext.cs" />
+    <Compile Include="Infra\Repository\Repository.cs" />
+    <Compile Include="Infra\Repository\TodoRepository.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Interfaces\IRepository.cs" />
+    <Compile Include="Models\Interfaces\ITodoRepository.cs" />
+    <Compile Include="Models\Todo.cs" />
+    <Compile Include="Services\TodoService.cs" />
+    <Compile Include="ViewModel\TodoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
